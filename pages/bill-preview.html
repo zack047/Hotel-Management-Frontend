@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Preview - Hotel Bill Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/bill-preview.css">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-hotel"></i>
+            <h2>Luxury Hotel</h2>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="dashboard.html">
+                    <i class="fas fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="active">
+                <a href="bill-generator.html">
+                    <i class="fas fa-file-invoice"></i>
+                    New Bill
+                </a>
+            </li>
+            <li>
+                <a href="manage-bills.html">
+                    <i class="fas fa-list-alt"></i>
+                    Manage Bills
+                </a>
+            </li>
+            <li>
+                <a href="settings.html">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="user-info">
+                <span>Welcome, Admin</span>
+                <a href="../index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </div>
+        </div>
+
+        <!-- Bill Preview Content -->
+        <div class="bill-preview-content">
+            <div class="actions-bar">
+                <button onclick="window.history.back()" class="btn-secondary">
+                    <i class="fas fa-arrow-left"></i>
+                    Back
+                </button>
+                <div class="right-actions">
+                    <button onclick="window.print()" class="btn-primary">
+                        <i class="fas fa-print"></i>
+                        Print Bill
+                    </button>
+                    <button onclick="downloadPDF()" class="btn-primary">
+                        <i class="fas fa-download"></i>
+                        Download PDF
+                    </button>
+                </div>
+            </div>
+
+            <div class="bill-container card">
+                <div class="bill-header">
+                    <div class="hotel-info">
+                        <i class="fas fa-hotel"></i>
+                        <h1>Luxury Hotel</h1>
+                        <p>123 Luxury Avenue, Beverly Hills, CA 90210</p>
+                        <p>Tel: (555) 123-4567 | Email: info@luxuryhotel.com</p>
+                    </div>
+                    <div class="bill-meta">
+                        <h2>INVOICE</h2>
+                        <p>Bill No: <span id="billNo"></span></p>
+                        <p>Date: <span id="billDate"></span></p>
+                    </div>
+                </div>
+
+                <div class="guest-info">
+                    <div class="info-group">
+                        <label>Guest Name:</label>
+                        <span id="guestName"></span>
+                    </div>
+                    <div class="info-group">
+                        <label>Room No:</label>
+                        <span id="roomNo"></span>
+                    </div>
+                    <div class="info-group">
+                        <label>Check-in:</label>
+                        <span id="checkIn"></span>
+                    </div>
+                    <div class="info-group">
+                        <label>Check-out:</label>
+                        <span id="checkOut"></span>
+                    </div>
+                </div>
+
+                <div class="bill-details">
+                    <table class="bill-table">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Nights</th>
+                                <th>Rate</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="billItems">
+                            <!-- Populated by JavaScript -->
+                        </tbody>
+                        <tfoot>
+                            <tr class="subtotal">
+                                <td colspan="3">Subtotal</td>
+                                <td id="subtotal"></td>
+                            </tr>
+                            <tr class="tax">
+                                <td colspan="3">Tax (18%)</td>
+                                <td id="tax"></td>
+                            </tr>
+                            <tr class="discount">
+                                <td colspan="3">Discount</td>
+                                <td id="discount"></td>
+                            </tr>
+                            <tr class="total">
+                                <td colspan="3">Total Amount</td>
+                                <td id="total"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="bill-footer">
+                    <p>Thank you for choosing Luxury Hotel</p>
+                    <p class="terms">This is a computer generated bill and doesn't require signature</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/bill-preview.js"></script>
+</body>
+</html>

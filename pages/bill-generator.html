@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Bill - Hotel Bill Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/bill-generator.css">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-hotel"></i>
+            <h2>Luxury Hotel</h2>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="dashboard.html">
+                    <i class="fas fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="active">
+                <a href="bill-generator.html">
+                    <i class="fas fa-file-invoice"></i>
+                    New Bill
+                </a>
+            </li>
+            <li>
+                <a href="manage-bills.html">
+                    <i class="fas fa-list-alt"></i>
+                    Manage Bills
+                </a>
+            </li>
+            <li>
+                <a href="settings.html">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="user-info">
+                <span>Welcome, Admin</span>
+                <a href="../index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </div>
+        </div>
+
+        <!-- Bill Generator Content -->
+        <div class="bill-generator-content">
+            <h1>Generate New Bill</h1>
+            
+            <form id="billForm" class="bill-form card">
+                <!-- Guest Information -->
+                <div class="form-section">
+                    <h2>Guest Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="guestName">Guest Name</label>
+                            <input type="text" id="guestName" name="guestName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="roomNo">Room Number</label>
+                            <input type="text" id="roomNo" name="roomNo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkIn">Check-in Date</label>
+                            <input type="date" id="checkIn" name="checkIn" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkOut">Check-out Date</label>
+                            <input type="date" id="checkOut" name="checkOut" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room Charges -->
+                <div class="form-section">
+                    <h2>Room Charges</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="roomType">Room Type</label>
+                            <select id="roomType" name="roomType" required>
+                                <option value="">Select Room Type</option>
+                                <option value="standard">Standard Room</option>
+                                <option value="deluxe">Deluxe Room</option>
+                                <option value="suite">Executive Suite</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="roomRate">Room Rate (per night)</label>
+                            <input type="number" id="roomRate" name="roomRate" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Services -->
+                <div class="form-section">
+                    <h2>Additional Services</h2>
+                    <div class="services-list">
+                        <div class="service-item">
+                            <label>
+                                <input type="checkbox" name="services" value="roomService">
+                                Room Service
+                            </label>
+                            <input type="number" placeholder="Amount">
+                        </div>
+                        <div class="service-item">
+                            <label>
+                                <input type="checkbox" name="services" value="laundry">
+                                Laundry
+                            </label>
+                            <input type="number" placeholder="Amount">
+                        </div>
+                        <div class="service-item">
+                            <label>
+                                <input type="checkbox" name="services" value="spa">
+                                Spa Services
+                            </label>
+                            <input type="number" placeholder="Amount">
+                        </div>
+                        <div class="service-item">
+                            <label>
+                                <input type="checkbox" name="services" value="restaurant">
+                                Restaurant
+                            </label>
+                            <input type="number" placeholder="Amount">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Taxes and Discounts -->
+                <div class="form-section">
+                    <h2>Taxes & Discounts</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="taxRate">Tax Rate (%)</label>
+                            <input type="number" id="taxRate" name="taxRate" value="18" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="discount">Discount (%)</label>
+                            <input type="number" id="discount" name="discount" value="0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-file-invoice"></i>
+                        Generate Bill
+                    </button>
+                    <button type="reset" class="btn-secondary">
+                        <i class="fas fa-redo"></i>
+                        Reset Form
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="../js/bill-generator.js"></script>
+</body>
+</html>

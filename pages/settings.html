@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Hotel Bill Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/settings.css">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-hotel"></i>
+            <h2>Luxury Hotel</h2>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="dashboard.html">
+                    <i class="fas fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="bill-generator.html">
+                    <i class="fas fa-file-invoice"></i>
+                    New Bill
+                </a>
+            </li>
+            <li>
+                <a href="manage-bills.html">
+                    <i class="fas fa-list-alt"></i>
+                    Manage Bills
+                </a>
+            </li>
+            <li class="active">
+                <a href="settings.html">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="user-info">
+                <span>Welcome, Admin</span>
+                <a href="../index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </div>
+        </div>
+
+        <!-- Settings Content -->
+        <div class="settings-content">
+            <h1>Settings</h1>
+
+            <div class="settings-grid">
+                <!-- Hotel Information -->
+                <div class="settings-card card">
+                    <h2>Hotel Information</h2>
+                    <form id="hotelInfoForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="hotelName">Hotel Name</label>
+                            <input type="text" id="hotelName" name="hotelName" value="Luxury Hotel">
+                        </div>
+                        <div class="form-group">
+                            <label for="hotelLogo">Hotel Logo</label>
+                            <div class="logo-upload">
+                                <img id="logoPreview" src="../assets/default-logo.png" alt="Hotel Logo">
+                                <input type="file" id="hotelLogo" name="hotelLogo" accept="image/*">
+                                <button type="button" class="btn-secondary">
+                                    <i class="fas fa-upload"></i>
+                                    Upload Logo
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotelAddress">Address</label>
+                            <textarea id="hotelAddress" name="hotelAddress" rows="3">123 Luxury Avenue, Beverly Hills, CA 90210</textarea>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="hotelPhone">Phone Number</label>
+                                <input type="tel" id="hotelPhone" name="hotelPhone" value="(555) 123-4567">
+                            </div>
+                            <div class="form-group">
+                                <label for="hotelEmail">Email</label>
+                                <input type="email" id="hotelEmail" name="hotelEmail" value="info@luxuryhotel.com">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Theme Settings -->
+                <div class="settings-card card">
+                    <h2>Theme Customization</h2>
+                    <form id="themeForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="primaryColor">Primary Color</label>
+                            <div class="color-picker">
+                                <input type="color" id="primaryColor" name="primaryColor" value="#0a1931">
+                                <span class="color-value">#0a1931</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="accentColor">Accent Color</label>
+                            <div class="color-picker">
+                                <input type="color" id="accentColor" name="accentColor" value="#c6a94f">
+                                <span class="color-value">#c6a94f</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Theme Mode</label>
+                            <div class="theme-toggle">
+                                <input type="radio" id="lightMode" name="themeMode" value="light" checked>
+                                <label for="lightMode">Light</label>
+                                <input type="radio" id="darkMode" name="themeMode" value="dark">
+                                <label for="darkMode">Dark</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Bill Settings -->
+                <div class="settings-card card">
+                    <h2>Bill Settings</h2>
+                    <form id="billSettingsForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="taxRate">Default Tax Rate (%)</label>
+                            <input type="number" id="taxRate" name="taxRate" value="18" min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="currency">Currency</label>
+                            <select id="currency" name="currency">
+                                <option value="USD">USD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="GBP">GBP (£)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="billFormat">Bill Number Format</label>
+                            <input type="text" id="billFormat" name="billFormat" value="INV-{YYYY}{MM}{DD}-{NUM}">
+                        </div>
+                        <div class="form-group">
+                            <label for="billFooter">Default Bill Footer</label>
+                            <textarea id="billFooter" name="billFooter" rows="2">Thank you for choosing Luxury Hotel</textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Save Changes Button -->
+            <div class="settings-actions">
+                <button onclick="saveSettings()" class="btn-primary">
+                    <i class="fas fa-save"></i>
+                    Save Changes
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/settings.js"></script>
+</body>
+</html>

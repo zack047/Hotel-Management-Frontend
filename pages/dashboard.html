@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Hotel Bill Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-hotel"></i>
+            <h2>Luxury Hotel</h2>
+        </div>
+        <ul class="nav-links">
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class="fas fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="bill-generator.html">
+                    <i class="fas fa-file-invoice"></i>
+                    New Bill
+                </a>
+            </li>
+            <li>
+                <a href="manage-bills.html">
+                    <i class="fas fa-list-alt"></i>
+                    Manage Bills
+                </a>
+            </li>
+            <li>
+                <a href="settings.html">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="user-info">
+                <span>Welcome, Admin</span>
+                <a href="../index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <h1>Dashboard Overview</h1>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Total Bills</h3>
+                        <p class="stat-number">248</p>
+                        <span class="stat-period">This Month</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Active Guests</h3>
+                        <p class="stat-number">42</p>
+                        <span class="stat-period">Currently</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Pending Payments</h3>
+                        <p class="stat-number">15</p>
+                        <span class="stat-period">To Process</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Revenue</h3>
+                        <p class="stat-number">$52,489</p>
+                        <span class="stat-period">This Month</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Bills -->
+            <div class="recent-bills card">
+                <div class="card-header">
+                    <h2>Recent Bills</h2>
+                    <a href="manage-bills.html" class="btn-primary">
+                        <i class="fas fa-eye"></i>
+                        View All
+                    </a>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Guest Name</th>
+                            <th>Room No.</th>
+                            <th>Check-in</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentBillsTable">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

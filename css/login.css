@@ -1,0 +1,75 @@
+/* Login Page Styles */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1a2942 100%);
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-box {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hotel-branding {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.hotel-branding i {
+    font-size: 48px;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.hotel-branding h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.hotel-branding p {
+    color: #666;
+    font-size: 14px;
+}
+
+.login-form .form-group {
+    margin-bottom: 25px;
+}
+
+.login-form .form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.login-form .form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.login-form .form-group input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(198, 169, 79, 0.1);
+}
+
+.login-form .btn-primary {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    justify-content: center;
+}
