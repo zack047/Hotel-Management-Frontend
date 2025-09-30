@@ -9,21 +9,21 @@ const recentBills = [
         guestName: "John Smith",
         roomNo: "301",
         checkIn: "2025-09-28",
-        amount: "$850",
+        amount: "₹850",
         status: "Paid"
     },
     {
         guestName: "Emma Wilson",
         roomNo: "405",
         checkIn: "2025-09-29",
-        amount: "$1,200",
+        amount: "₹1,200",
         status: "Pending"
     },
     {
         guestName: "Michael Brown",
         roomNo: "202",
         checkIn: "2025-09-30",
-        amount: "$650",
+        amount: "₹650",
         status: "Paid"
     }
 ];
